@@ -1,8 +1,9 @@
 import nextcord
 from nextcord.ext import commands
 import os
+from dotenv import load_dotenv
 
-intents  = nextcord.Intents.default()
+load_dotenv()
 
 class MyBot(commands.Bot):
 
@@ -15,8 +16,10 @@ class MyBot(commands.Bot):
     
     async def on_ready(self):
         print('Bot is ready.')
+        await self.change_presence(activity=nextcord.Game(name='with nextcord'))
 
-client = MyBot(command_prefix='!', intents=intents)
+
+client = MyBot(command_prefix='!', intents=nextcord.Intents.default())
 
 if __name__ == '__main__':
     client.run(os.getenv('TOKEN'))
