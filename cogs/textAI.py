@@ -17,7 +17,9 @@ class textAI(commands.Cog):
             model = "text-davinci-003",
             prompt = query,
             temperature = 0.9,
+
             max_tokens = 4096-len(query),
+
             top_p = 0.3,
             frequency_penalty = 0.5,
             presence_penalty = 0.0
