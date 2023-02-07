@@ -39,7 +39,6 @@ class ErrorHandler(commands.Cog):
 
 			message = (
 					f'{ctx.command.name} is disabled in this server. Contact an admin if you think it should be enabled.')
-		else:
 
 		if message == '':
 			print("Invalid command")
